@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Pytest
+.pytest_cache/
+
+# Rocky runs
+projects/
+
+# Rocky outputs
+*.rocky.files/
+
+# Rocky archives
+*.rocky_archive*
+
+# Temporary
+tmp/
+
+# Logs
+*.log
+
+# Excel temp
+~$*.xlsx

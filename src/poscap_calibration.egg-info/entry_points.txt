@@ -1,0 +1,2 @@
+[console_scripts]
+poscap = poscap_calibration.cli:main

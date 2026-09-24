@@ -1,0 +1,34 @@
+project:
+  project_id: "POSCAP_SAMPLE_001"
+  powder_name: "sample"
+
+rocky:
+  version: "2025R2"
+  executable_path: "C:/Program Files/ANSYS Inc/v252/rocky/bin/Rocky.exe"
+  connection:
+    host: "127.0.0.1"
+    port: 9641
+  solver:
+    mode: "CPU"
+
+calibration:
+  peak_ratio: null
+  rolling_resistance_levels: [0.2, 0.45, 0.7]
+  dynamic_friction_levels: [0.2, 0.45, 0.7]
+
+shear:
+  loads_kpa: [3, 5, 7]
+  steady_window_s: [0.501, 0.55]
+  periodic_divisions: 18
+  correction_factor: null
+
+wall_friction:
+  loads_kpa: [3, 5, 7]
+  steady_window_s: [0.201, 0.25]
+  level_multipliers: [0.5, 1.0, 1.5]
+  correction_factor: null
+
+safety:
+  overwrite_existing_results: false
+  require_confirmation_before_run: true
+  require_confirmation_before_finalizing: true

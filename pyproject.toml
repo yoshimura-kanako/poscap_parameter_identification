@@ -1,0 +1,23 @@
+[project]
+name = "poscap-calibration"
+version = "0.1.0"
+description = "POSCAP DEMパラメータ同定自動化システム"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "openpyxl",
+    "pyyaml",
+]
+
+[project.scripts]
+poscap = "poscap_calibration.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

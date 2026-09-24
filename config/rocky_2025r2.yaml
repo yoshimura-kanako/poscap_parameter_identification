@@ -1,0 +1,44 @@
+# Rocky 2025 R2向けオブジェクト名設定
+# docs/Rocky.md 15章参照
+
+rocky:
+  version: "2025R2"
+
+objects:
+  shear:
+    fill_cross_plot: "coords_size_cross_id"
+    fill_user_process: "Split"
+    pre_cross_plot: "Cross Plot <01>"
+    pre_user_process: null
+    lid_height_plot: "Lid_Height"
+    torque_plot: "Lid_Moment_Force"
+    shear_cell_geometry: "FT4_ShearCell2_5deg_mm"
+
+  wall:
+    # 充填はせん断試験と共通のテンプレート・オブジェクトを使用する。
+    fill_cross_plot: "coords_size_cross_id"
+    fill_user_process: "Split"
+    pre_cross_plot: "Cross Plot <01>"
+    pre_user_process: null
+    lid_height_plot: "Lid_Height"
+    torque_plot: "Lid_Moment_Force"
+    wall_disc_geometry: "Wall_Friction_Disc_24mm_5deg"
+    # nullの場合はwall_disc_geometryのGeometryに設定された材料を使用する。
+    wall_material: null
+
+templates:
+  shear:
+    generate_particle: "templates/rocky/shear/Generate_Particle.rocky"
+    fill: "templates/rocky/shear/Filling.rocky"
+    pre_shear: "templates/rocky/shear/Pre_shear.rocky"
+    shear_3kpa: "templates/rocky/shear/Shear_3kPa.rocky"
+    shear_5kpa: "templates/rocky/shear/Shear_5kPa.rocky"
+    shear_7kpa: "templates/rocky/shear/Shear_7kPa.rocky"
+
+  wall:
+    # 充填テンプレートはせん断試験と共通。
+    fill: "templates/rocky/shear/Filling.rocky"
+    pre_shear: "templates/rocky/wall_friction/Pre_shear_9kPa.rocky"
+    shear_3kpa: "templates/rocky/wall_friction/Shear_test_3kPa.rocky"
+    shear_5kpa: "templates/rocky/wall_friction/Shear_test_5kPa.rocky"
+    shear_7kpa: "templates/rocky/wall_friction/Shear_test_7kPa.rocky"
